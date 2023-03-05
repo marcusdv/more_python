@@ -1,3 +1,6 @@
+from operator import attrgetter
+
+
 class Employee():
     def __init__(self, name, age, salary):
         self.name = name
@@ -16,6 +19,6 @@ employees = [e1, e2, e3]
 def employee_sort(emp):
     return emp.name
 
-sorted_employees = sorted(employees, key = lambda e: e.name)
+sorted_employees = sorted(employees, key = attrgetter('age'))
 
 print(sorted_employees)
